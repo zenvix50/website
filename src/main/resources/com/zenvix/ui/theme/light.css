@@ -1,0 +1,11 @@
+.root {
+    -fx-base: #F5F5F5;
+    -fx-background: #FFFFFF;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-color: #F5F5F5;
+    -fx-accent: #0288D1;
+    -fx-focus-color: #1565C0;
+    -fx-faint-focus-color: #1565C044;
+    -fx-text-base-color: #212121;
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
+}

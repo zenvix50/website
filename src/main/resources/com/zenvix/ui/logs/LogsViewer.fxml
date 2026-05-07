@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zenvix.ui.logs.LogsViewer"
+            style="-fx-background-color: #2b2b2b;">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #3c3f41;">
+            <TextField fx:id="searchField" promptText="Regex search..." prefWidth="250"/>
+            <Button text="▲" onAction="#handleSearchPrev" tooltip="Previous Match"/>
+            <Button text="▼" onAction="#handleSearchNext" tooltip="Next Match"/>
+            <Label fx:id="searchMatchesLabel" text="0 matches" textFill="#aaaaaa"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <ToggleButton fx:id="autoScrollToggle" text="Auto-Scroll" selected="true"/>
+            <Button text="Clear" onAction="#handleClear"/>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane>
+            <ListView fx:id="logListView" style="-fx-background-color: #2b2b2b; -fx-control-inner-background: #2b2b2b;"/>
+            <Button fx:id="jumpToBottomBtn" text="↓ Jump to Bottom" visible="false"
+                    StackPane.alignment="BOTTOM_RIGHT" onAction="#handleJumpToBottom"
+                    style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 5 15; -fx-background-radius: 20;">
+                <StackPane.margin>
+                    <Insets bottom="20.0" right="20.0"/>
+                </StackPane.margin>
+            </Button>
+        </StackPane>
+    </center>
+
+</BorderPane>
