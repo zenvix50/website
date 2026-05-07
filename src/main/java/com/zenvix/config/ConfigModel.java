@@ -42,4 +42,9 @@ public class ConfigModel {
         public Map<String, String> envVars;
         public List<String> associatedServices;
     }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class SchedulerConfig {
+        public List<com.zenvix.scheduler.ScheduledJob> jobs;
+    }
 }
