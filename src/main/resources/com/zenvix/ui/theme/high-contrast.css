@@ -1,0 +1,21 @@
+.root {
+    -fx-base: #000000;
+    -fx-background: #000000;
+    -fx-control-inner-background: #000000;
+    -fx-color: #000000;
+    -fx-accent: #FFFF00;
+    -fx-focus-color: #FFFFFF;
+    -fx-faint-focus-color: transparent;
+    -fx-text-base-color: #FFFFFF;
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.button {
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2px;
+}
+
+.text-field {
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2px;
+}

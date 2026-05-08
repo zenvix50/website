@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox fx:id="toolbarContainer" spacing="10.0" alignment="CENTER_LEFT"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 8; -fx-border-color: #dddddd; -fx-border-width: 0 0 1 0;"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.zenvix.ui.components.QuickActionsBar">
+
+    <Button fx:id="btnStartAll" text="▶ Start All" onAction="#handleStartAll" styleClass="quick-action-btn">
+        <tooltip><Tooltip text="Start all configured services in dependency order (Ctrl+Shift+S)"/></tooltip>
+    </Button>
+
+    <Button fx:id="btnStopAll" text="⏹ Stop All" onAction="#handleStopAll" styleClass="quick-action-btn">
+        <tooltip><Tooltip text="Stop all running services in reverse dependency order (Ctrl+Shift+X)"/></tooltip>
+    </Button>
+
+    <Button fx:id="btnRestartAll" text="🔄 Restart All" onAction="#handleRestartAll" styleClass="quick-action-btn">
+        <tooltip><Tooltip text="Restart all services (Ctrl+Shift+R)"/></tooltip>
+    </Button>
+    
+    <Separator orientation="VERTICAL" />
+
+    <Button fx:id="btnBackupConfig" text="💾 Backup Config" onAction="#handleBackupConfig" styleClass="quick-action-btn">
+        <tooltip><Tooltip text="Create a ZIP backup of all configuration files (Ctrl+B)"/></tooltip>
+    </Button>
+
+    <Button fx:id="btnOpenTerminal" text="&gt;_ Terminal" onAction="#handleOpenTerminal" styleClass="quick-action-btn">
+        <tooltip><Tooltip text="Open built-in terminal (Ctrl+T)"/></tooltip>
+    </Button>
+
+    <Button fx:id="btnOpenBrowser" text="🌐 Browser" onAction="#handleOpenBrowser" styleClass="quick-action-btn">
+        <tooltip><Tooltip text="Open localhost overview page in default browser"/></tooltip>
+    </Button>
+
+</HBox>
