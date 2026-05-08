@@ -1,1 +1,0 @@
-import{r as e,t}from"./framer-motion-BQIiEmTS.js";var n=e();function r({children:e}){return(0,n.jsx)(t.main,{initial:{opacity:0},animate:{opacity:1},transition:{duration:.3},children:e})}export{r as t};

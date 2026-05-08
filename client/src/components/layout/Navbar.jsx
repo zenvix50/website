@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 
 const navLinks = [
   { label: 'Features', to: '/features' },
@@ -16,9 +16,15 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 h-16 border-b border-border bg-bg-primary/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+        
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold">
-          <span className="w-8 h-8 rounded bg-accent flex items-center justify-center text-white font-black text-lg">Z</span>
+        <Link
+          to="/"
+          className="flex items-center gap-2 font-display text-xl font-bold"
+        >
+          <span className="w-8 h-8 rounded bg-accent flex items-center justify-center text-white font-black text-lg">
+            Z
+          </span>
           <span className="text-text-primary">zenviX</span>
         </Link>
 
@@ -29,7 +35,11 @@ export default function Navbar() {
               key={to}
               to={to}
               className={({ isActive }) =>
-                `text-sm transition-colors ${isActive ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}`
+                `text-sm transition-colors ${
+                  isActive
+                    ? 'text-accent'
+                    : 'text-text-secondary hover:text-text-primary'
+                }`
               }
             >
               {label}
@@ -45,9 +55,9 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 text-sm text-text-secondary border border-border rounded-lg hover:border-accent hover:text-white transition-all"
           >
-            <Github size={16} />
-            GitHub ★
+            <span>GitHub ★</span>
           </a>
+
           <Link
             to="/download"
             className="flex items-center gap-2 px-4 py-2 text-sm bg-accent text-white rounded-lg hover:bg-accent-hover transition-all shadow-[0_0_20px_#e8342a40]"
@@ -82,12 +92,15 @@ export default function Navbar() {
                 to={to}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `text-base py-2 border-b border-border/50 ${isActive ? 'text-accent' : 'text-text-secondary'}`
+                  `text-base py-2 border-b border-border/50 ${
+                    isActive ? 'text-accent' : 'text-text-secondary'
+                  }`
                 }
               >
                 {label}
               </NavLink>
             ))}
+
             <Link
               to="/download"
               onClick={() => setOpen(false)}

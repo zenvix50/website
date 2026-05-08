@@ -1,0 +1,6 @@
+import{r as i,j as e}from"./vendor-7e79a346.js";import{C as d}from"./check-0b542e4d.js";import{c as n}from"./index-5ad19771.js";import{S as x,a as b}from"./syntax-highlighter-128d5034.js";/**
+ * @license lucide-react v1.14.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const l=[["rect",{width:"14",height:"14",x:"8",y:"8",rx:"2",ry:"2",key:"17jyea"}],["path",{d:"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2",key:"zix9uf"}]],h=n("copy",l);function y({code:t,language:s="bash",filename:r}){const[a,o]=i.useState(!1),c=()=>{navigator.clipboard.writeText(t),o(!0),setTimeout(()=>o(!1),2e3)};return e.jsxs("div",{className:"relative rounded-lg overflow-hidden border border-border bg-bg-card",children:[r&&e.jsx("div",{className:"px-4 py-2 bg-bg-surface border-b border-border text-xs font-mono text-text-muted",children:r}),e.jsx("button",{onClick:c,className:"absolute top-3 right-3 p-2 rounded bg-bg-surface/80 hover:bg-bg-surface text-text-secondary hover:text-white transition-colors z-10",children:a?e.jsx(d,{size:16}):e.jsx(h,{size:16})}),e.jsx(x,{language:s,style:b,customStyle:{margin:0,background:"transparent"},children:t})]})}export{y as C};
