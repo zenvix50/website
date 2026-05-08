@@ -12,10 +12,10 @@
 
     "build": "cd client && npm install && npm run build",
 
-    "start": "node server/index.js"
+    "start": "cd server && npm install && node index.js"
   },
 
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0"
   }
