@@ -26,7 +26,10 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middlewares
+// ================================
+// MIDDLEWARES
+// ================================
+
 app.use(helmet());
 
 app.use(cors({
@@ -37,12 +40,18 @@ app.use(cors({
 app.use(morgan('dev'));
 app.use(express.json());
 
-// API Test Route
+// ================================
+// API TEST ROUTE
+// ================================
+
 app.get('/api', (req, res) => {
   res.send('ZenviX API Running');
 });
 
-// API Routes
+// ================================
+// API ROUTES
+// ================================
+
 app.use('/api/releases', releasesRouter);
 app.use('/api/downloads', downloadsRouter);
 app.use('/api/subscribe', subscribeRouter);
@@ -60,18 +69,19 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(clientPath, 'index.html'));
 });
 
-// Error Middleware
+// ================================
+// ERROR MIDDLEWARE
+// ================================
+
 app.use(errorHandler);
 
-// Railway PORT
-const PORT = process.env.PORT || 5000;
+// ================================
+// RAILWAY PORT FIX
+// ================================
+
+const PORT = process.env.PORT || 8080;
 
 // Start Server
-const server = app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`ZenviX API running on port ${PORT}`);
-});
-
-// Error Handling
-server.on('error', (err) => {
-  console.error('Server Error:', err);
 });
