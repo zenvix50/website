@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefWidth="1000.0" prefHeight="650.0" minWidth="800.0" minHeight="500.0"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zenvix.ui.MainWindowController"
+            onKeyPressed="#handleKeyPress">
+
+    <!-- Header Bar -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #2b2b2b; -fx-padding: 10;">
+            <Label text="zenviX" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" accessibleRole="TEXT" accessibleText="zenviX Logo"/>
+            <Label text="v1.0.0" style="-fx-text-fill: #aaaaaa;" accessibleRole="TEXT" accessibleText="Version 1.0.0"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="🌓" fx:id="themeToggleButton" onAction="#toggleTheme" style="-fx-background-color: transparent; -fx-text-fill: white;" accessibleText="Toggle Theme" focusTraversable="true"/>
+            <Button text="_" fx:id="minimizeToTrayButton" onAction="#minimizeToTray" style="-fx-background-color: transparent; -fx-text-fill: white;" accessibleText="Minimize to Tray" focusTraversable="true"/>
+        </HBox>
+    </top>
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox spacing="5.0" style="-fx-background-color: #3c3f41; -fx-padding: 10; -fx-pref-width: 200;">
+            <Button text="Dashboard" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Dashboard Navigation" focusTraversable="true"/>
+            <Button text="Services" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Services Navigation" focusTraversable="true"/>
+            <Button text="Projects" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Projects Navigation" focusTraversable="true"/>
+            <Button text="Database" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Database Navigation" focusTraversable="true"/>
+            <Button text="Logs" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Logs Navigation" focusTraversable="true"/>
+            <Button text="Terminal" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Terminal Navigation" focusTraversable="true"/>
+            <Button text="Scheduler" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Scheduler Navigation" focusTraversable="true"/>
+            <Button text="Settings" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10;" accessibleText="Settings Navigation" focusTraversable="true"/>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox fx:id="servicesContainer" spacing="10.0" style="-fx-padding: 15;">
+                <!-- Service rows injected dynamically here -->
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- Status Bar -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #2b2b2b; -fx-padding: 5 10;">
+            <Label fx:id="heapIndicator" text="Heap: 128MB / 512MB" style="-fx-text-fill: #aaaaaa;" accessibleText="JVM Heap Indicator"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="lastActionLabel" text="Ready" style="-fx-text-fill: #aaaaaa;" accessibleText="Last Action Timestamp"/>
+            <Label fx:id="updateBadge" text="Update Available!" visible="false" style="-fx-background-color: #ff9800; -fx-text-fill: white; -fx-padding: 2 5; -fx-background-radius: 3;" accessibleText="Update Available Badge"/>
+        </HBox>
+    </bottom>
+</BorderPane>
