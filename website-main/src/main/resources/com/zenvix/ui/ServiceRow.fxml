@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 10; -fx-border-color: #e0e0e0; -fx-border-radius: 5; -fx-background-radius: 5;"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.zenvix.ui.ServiceRowController">
+
+    <Label fx:id="iconLabel" text="⚙" style="-fx-font-size: 20px;" accessibleText="Service Icon"/>
+    <Label fx:id="serviceNameLabel" text="Service Name" prefWidth="120.0" style="-fx-font-weight: bold; -fx-font-size: 14px;" accessibleText="Service Name"/>
+    
+    <ComboBox fx:id="versionDropdown" prefWidth="100.0" accessibleText="Version Selection" focusTraversable="true"/>
+    
+    <Label fx:id="statusBadge" text="STOPPED" prefWidth="80.0" alignment="CENTER" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold; -fx-padding: 3 8;" accessibleRole="TEXT" accessibleText="Service Status Stopped"/>
+
+    <!-- Inline editable port field -->
+    <StackPane prefWidth="80.0">
+        <Label fx:id="portLabel" text="8080" onMouseClicked="#handlePortClick" style="-fx-cursor: hand; -fx-text-fill: #2196f3; -fx-underline: true;" accessibleText="Port Number Click to Edit" focusTraversable="true"/>
+        <TextField fx:id="portField" visible="false" maxWidth="70.0" accessibleText="Port Number Input Field"/>
+    </StackPane>
+
+    <Region HBox.hgrow="ALWAYS" />
+
+    <Button fx:id="startButton" text="Start" onAction="#handleStart" style="-fx-background-color: #4caf50; -fx-text-fill: white;" accessibleText="Start Service" focusTraversable="true"/>
+    <Button fx:id="stopButton" text="Stop" onAction="#handleStop" disable="true" style="-fx-background-color: #f44336; -fx-text-fill: white;" accessibleText="Stop Service" focusTraversable="true"/>
+    <Button fx:id="restartButton" text="Restart" onAction="#handleRestart" disable="true" style="-fx-background-color: #ff9800; -fx-text-fill: white;" accessibleText="Restart Service" focusTraversable="true"/>
+    <Button fx:id="logsButton" text="Logs" onAction="#handleLogs" accessibleText="View Logs" focusTraversable="true"/>
+    <Button fx:id="configButton" text="Config" onAction="#handleConfig" accessibleText="Configure Service" focusTraversable="true"/>
+</HBox>

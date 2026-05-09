@@ -1,0 +1,1 @@
+import{j as t}from"./vendor-7e79a346.js";import{m as a}from"./framer-motion-d86ec07a.js";function n({children:i}){return t.jsx(a.main,{initial:{opacity:0},animate:{opacity:1},transition:{duration:.3},children:i})}export{n as P};
